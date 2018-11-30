@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/group_one"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home_icon"
+            android:title="@string/home" />
+       <!-- <item
+            android:id="@+id/edit_new"
+            android:icon="@drawable/ic_edit_icon"
+            android:title="@string/edit_new" />-->
+        <item
+            android:id="@+id/templates"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/templates" />
+        <item
+            android:id="@+id/categories"
+            android:icon="@drawable/ic_categories_icon"
+            android:title="@string/categories" />
+
+        <item
+            android:id="@+id/make_collage"
+            android:icon="@drawable/ic_collage_icon"
+            android:title="@string/make_collage" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_two"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/report_problem"
+            android:icon="@drawable/ic_report_problem_icon"
+            android:title="@string/report_problem" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/share" />
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/send" />
+
+    </group>
+
+</menu>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/styles_tab_one" />
+
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/styles_tab_two" />
+
+            </ScrollView>
+
+        </FrameLayout>
+
+         <!-- <TextView
+             android:id="@+id/sample_text"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:padding="18dp" />
+
+         <android.support.v7.widget.AppCompatButton
+             android:id="@+id/ok_btn"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/colorPrimaryDark"
+             android:text="@string/ok"
+             android:textColor="@color/white" />-->
+
+    </LinearLayout>
+
+</TabHost>
+
+
+
+

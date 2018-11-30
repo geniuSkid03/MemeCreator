@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.genius.memecreator.appViews.GridRecyclerView
+        android:id="@+id/sticker_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:layoutAnimation="@anim/grid_anim_from_bottom"
+        android:padding="@dimen/default_spacing_small" />
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/ic_file_save"
+        android:id="@+id/save"
+        android:title="@string/save"/>
+
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/ic_share"
+        android:id="@+id/share"
+        android:title="@string/share"/>
+
+    <item
+        android:id="@+id/editor_help"
+        android:icon="@drawable/ic_help_icon"
+        android:title="@string/help"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/ok"
+        android:icon="@drawable/ic_tick_icon"
+        android:title="@string/close"
+        app:showAsAction="always" />
+
+    <!--<item
+        android:id="@+id/empty"
+        android:orderInCategory="101"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_overflow_menu_icon"
+        android:title="@string/menu">
+        <menu>
+            <item
+                android:id="@+id/editor_help"
+                android:icon="@drawable/ic_help_icon"
+                android:title="@string/help"
+                app:showAsAction="never|withText" />
+        </menu>
+    </item>-->
+</menu>

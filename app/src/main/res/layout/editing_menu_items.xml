@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:autoFit="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/indicator_view"
+    android:layout_width="52dp"
+    android:layout_height="64dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/edit_icon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:contentDescription="@null"
+        android:padding="2dp"
+        android:tint="@color/white" />
+
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:padding="1dp"
+        android:text="@string/dummy"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        autoFit:minTextSize="8sp" />
+
+</LinearLayout>

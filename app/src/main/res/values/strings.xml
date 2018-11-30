@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">All Time Memes</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">MEME Factory</string>
+    <string name="nav_header_subtitle">Become a meme creator</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="pick_from_gallery">Choose from gallery</string>
+    <string name="cancel">Cancel</string>
+    <string name="open_file_title">Choose Operation:</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="dummy">updating…</string>
+    <string name="random">Random</string>
+    <string name="Ok">OK</string>
+    <string name="enter_your_text">Enter Your Text</string>
+    <string name="yes">Yes</string>
+    <string name="function_not_set">Function not enabled by developer!</string>
+    <string name="help">Help</string>
+    <string name="menu">menu</string>
+    <string name="loading">Loading…</string>
+    <string name="home">Home</string>
+    <string name="edit_new">Edit New</string>
+    <string name="categories">Categories</string>
+    <string name="templates">Templates</string>
+    <string name="others">others</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
+    <string name="report_problem">Report a problem</string>
+    <string name="choose_from_gallery">From gallery</string>
+    <string name="choose">Choose</string>
+    <string name="favourite">Favourite</string>
+    <string name="recent">Recent</string>
+    <string name="trending">Trending</string>
+    <string name="alert">Alert</string>
+    <string name="discard_msg">Unsaved changes will be lost. Are you sure want to exit?</string>
+    <string name="save">save</string>
+    <string name="close">Exit</string>
+    <string name="enter_file_name">Enter file name…</string>
+    <string name="save_as">Save as</string>
+    <string name="search">Search</string>
+    <string name="top_text">Top text</string>
+    <string name="bottom_text">Bottom text</string>
+    <string name="meme">meme</string>
+    <string name="cannot_access_storage">Cannot access storage!</string>
+    <string name="ok">OK</string>
+    <string name="demo">Demo</string>
+    <string name="text">Text</string>
+    <string name="font">Font</string>
+    <string name="font_size">Font size:</string>
+    <string name="text_alignment">Alignment:</string>
+    <string name="font_style">Styles:</string>
+    <string name="typo">Typography</string>
+    <string name="lorem_ipsum">2 down vote If you want to achieve a shadow like the one that Android does in the Launcher, we\'re managing these values. They\'re useful if you want to create TextViews that will appear as a Widget, without a background.</string>
+    <string name="enter_text">Enter Text</string>
+    <string name="choose_size">Choose size:</string>
+    <string name="choose_font">Choose Font:</string>
+    <string name="apply">Apply</string>
+    <string name="font_acme">Acme</string>
+    <string name="font_aldrich">Aldrich</string>
+    <string name="font_architech">Architech</string>
+    <string name="font_boogalo">Boogalo</string>
+    <string name="font_breeserif">Bree serif</string>
+    <string name="font_cabin">Cabin</string>
+    <string name="styles">Styles</string>
+    <string name="text_view">Text View</string>
+    <string name="bold">Bold</string>
+    <string name="italic">Italic</string>
+    <string name="normal">Normal</string>
+    <string name="def">Default</string>
+    <string name="text_case">Text Cases</string>
+    <string name="upper">upper case</string>
+    <string name="lower">lower case</string>
+    <string name="unsaved_will_be_lost">Unsaved changes will be lost. Continue?</string>
+    <string name="name_cannot_be_empty">Name cannot be empty!</string>
+    <string name="saved">Saved</string>
+    <string name="edited">Edited</string>
+    <string name="items">items</string>
+    <string name="make_collage">Meme Collage</string>
+
+    <string-array name="grid_items">
+        <item>R.drawable.sample_1</item>
+        <item>R.drawable.sample_2</item>
+    </string-array>
+
+</resources>
