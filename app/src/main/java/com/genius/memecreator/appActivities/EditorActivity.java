@@ -107,7 +107,7 @@ public class EditorActivity extends SuperCompatActivity {
     private EditorExitDialog editorExitDialog;
 
     private MenuItem downloadMenu, shareMenu, okMenu;
-    private Uri shareImageUri, editingImageUri;
+    private Uri shareImageUri, editingImageUri = null;
 
     private boolean isColorChanged = false;
     private int textSize;
@@ -118,6 +118,9 @@ public class EditorActivity extends SuperCompatActivity {
     private int textAlignment = 1;
 
     private Fonts chosenFont;
+    private boolean isSaved = false;
+
+    private Uri editingImgUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,10 +131,24 @@ public class EditorActivity extends SuperCompatActivity {
 
         if (getIntent().getExtras() != null) {
             trendingMemes = gson.fromJson(getIntent().getStringExtra(Keys.TO_EDIT), TrendingMemes.class);
+            editingImageUri = Uri.parse(getIntent().getStringExtra(Keys.TO_EDIT_IMAGE));
         }
 
         if (trendingMemes != null) {
             loadEditor(trendingMemes);
+        } else if (editingImageUri != null) {
+            Picasso.get().load(editingImageUri).into(editImageIv, new Callback() {
+                @Override
+                public void onSuccess() {
+                    Bitmap bitmap = ((BitmapDrawable) editImageIv.getDrawable()).getBitmap();
+                    editingImageUri = AppHelper.getImageUri(EditorActivity.this, bitmap);
+                }
+
+                @Override
+                public void onError(Exception e) {
+
+                }
+            });
         }
 
         initEditingMenus();
@@ -266,10 +283,6 @@ public class EditorActivity extends SuperCompatActivity {
 
             }
         });
-
-        AppHelper.print("Image Uri: " + trendingMemes.getImgUrl());
-
-        chosenFont = new Fonts(getString(R.string.def), Typeface.DEFAULT);
     }
 
     private void initEditingMenus() {
@@ -317,6 +330,8 @@ public class EditorActivity extends SuperCompatActivity {
     }
 
     private void loadDialogs() {
+        chosenFont = new Fonts(getString(R.string.def), Typeface.DEFAULT);
+
         textInputDialog = new TextInputDialog(this, new TextInputDialog.TextInputDialogCallback() {
             @Override
             public void onDialogDismissed(String topText, String bottomText) {
@@ -431,18 +446,14 @@ public class EditorActivity extends SuperCompatActivity {
         editingImageContainer.setDrawingCacheEnabled(true);
         Bitmap bitmap = editingImageContainer.getDrawingCache();
 
-        File mainFolder = new File(Environment.getExternalStorageDirectory(), File.separator + Keys.FOLDER_MAIN + File.separator);
-        if (!mainFolder.exists()) {
-            mainFolder.mkdirs();
+        File file = new File(Environment.getExternalStorageDirectory()
+                + File.separator + getString(R.string.app_name) + File.separator + getString(R.string.edited));
+        if (!file.exists()) {
+            file.mkdirs();
         }
 
-        File editedMemes = new File(mainFolder, Keys.FOLDER_EDITED);
-        if (!editedMemes.exists()) {
-            editedMemes.mkdirs();
-        }
-
-        String file = fileName + ".jpg";
-        File toWriteFile = new File(editedMemes, file);
+        String ImgFile = fileName + ".jpg";
+        File toWriteFile = new File(file, ImgFile);
 
         if (toWriteFile.exists()) {
             toWriteFile.delete();
@@ -452,7 +463,7 @@ public class EditorActivity extends SuperCompatActivity {
             FileOutputStream fileOutputStream = new FileOutputStream(toWriteFile);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
             fileOutputStream.close();
-
+            isSaved = true;
             showToast(EditorActivity.this, "Meme saved to: " + toWriteFile.getAbsolutePath());
             refreshGallery(toWriteFile);
         } catch (IOException e) {
@@ -621,7 +632,12 @@ public class EditorActivity extends SuperCompatActivity {
     }
 
     private void showExitConfirmation() {
-        if(editorExitDialog != null && !editorExitDialog.isShowing()) {
+        if (isSaved) {
+            finish();
+            return;
+        }
+
+        if (editorExitDialog != null && !editorExitDialog.isShowing()) {
             editorExitDialog.show();
         }
     }

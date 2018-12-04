@@ -33,8 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:contentDescription="@null"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/arrogant_child" />
+                    android:scaleType="fitXY" />
 
             </LinearLayout>
 

@@ -10,6 +10,7 @@ public class Keys {
 
     public static final String ALL_PERMS_GRANTED = "is_all_permissions_granted";
     public static final String TO_EDIT = "to_edit";
+    public static final String TO_EDIT_IMAGE = "to_edit_image";
     public static String MIME_TYPE = "image/jpeg";
     public static String EDITING_MENU = "editing_menu";
     public static String STYLES_MENU = "style_menu";
@@ -22,6 +23,7 @@ public class Keys {
     public static String FRAGMENT_REPORT_PROBLEM = "fragment_report_problem";
     public static String FRAGMENT_CATEGORIES = "fragment_categories";
     public static final String FRAGMENT_COLLAGE = "fragment_make_collage";
+    public static final String FRAGMENT_BACKGROUND = "fragment_backgrounds";
 
 
     public static final String FRAGMENT_TRENDING = "fragment_trending";

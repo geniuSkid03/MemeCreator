@@ -80,6 +80,18 @@
     <string name="edited">Edited</string>
     <string name="items">items</string>
     <string name="make_collage">Meme Collage</string>
+    <string name="click_to_edit_your_meme">No Edited memes,\nclick + to edit new meme!</string>
+    <string name="choose_image_from">Choose image from</string>
+    <string name="info_img_cant_be_edited">Sorry, Image cannot be edited!</string>
+    <string name="info_edit_failed">Edit failed</string>
+    <string name="no_memes_saved">No Memes Saved yet!</string>
+    <string name="error_no_sd_card">Error! No SDCARD Found!</string>
+    <string name="share_meme_via">Share MEME via</string>
+    <string name="error_share_failed">Error, Share failed!</string>
+    <string name="info_no_bg_avail">No Backgrounds available currently!</string>
+    <string name="backgrounds">Backgrounds</string>
+    <string name="rate_this_app">Rate this app</string>
+    <string name="info_exit">Press BACK again to exit!</string>
 
     <string-array name="grid_items">
         <item>R.drawable.sample_1</item>

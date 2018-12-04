@@ -13,11 +13,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.genius.memecreator.R;
 import com.genius.memecreator.appAdapters.MyPagerAdapter;
 import com.genius.memecreator.appDialogs.EditNewBottomSheetDialog;
+import com.genius.memecreator.appFragments.BackgroundsFragment;
 import com.genius.memecreator.appFragments.CategoriesFragment;
 import com.genius.memecreator.appFragments.HomeFragment;
 import com.genius.memecreator.appFragments.MakeCollageFragment;
@@ -53,6 +53,7 @@ public class HomeActivity extends SuperCompatActivity
     private ReportAProblemFragment reportAProblemFragment;
     private CategoriesFragment categoriesFragment;
     private MakeCollageFragment makeCollageFragment;
+    private BackgroundsFragment backgroundsFragment;
 
     private MyPagerAdapter myPagerAdapter;
     private EditNewBottomSheetDialog editNewBottomSheetDialog;
@@ -81,6 +82,10 @@ public class HomeActivity extends SuperCompatActivity
 
         if(makeCollageFragment != null && makeCollageFragment.isAdded()) {
             fragmentManager.putFragment(outState, Keys.FRAGMENT_COLLAGE, makeCollageFragment);
+        }
+
+        if(backgroundsFragment != null && backgroundsFragment.isAdded()) {
+            fragmentManager.putFragment(outState, Keys.FRAGMENT_BACKGROUND, backgroundsFragment);
         }
 
     }
@@ -129,6 +134,7 @@ public class HomeActivity extends SuperCompatActivity
             homeFragment = (HomeFragment) fragmentManager.getFragment(savedInstanceState, Keys.FRAGMENT_HOME);
             categoriesFragment = (CategoriesFragment) fragmentManager.getFragment(savedInstanceState, Keys.FRAGMENT_CATEGORIES);
             templatesFragment = (TemplatesFragment) fragmentManager.getFragment(savedInstanceState, Keys.FRAGMENT_TEMPLATES);
+            backgroundsFragment = (BackgroundsFragment) fragmentManager.getFragment(savedInstanceState, Keys.FRAGMENT_BACKGROUND);
             reportAProblemFragment = (ReportAProblemFragment) fragmentManager.getFragment(savedInstanceState, Keys.FRAGMENT_REPORT_PROBLEM);
         }
 
@@ -152,10 +158,15 @@ public class HomeActivity extends SuperCompatActivity
             makeCollageFragment = new MakeCollageFragment();
         }
 
+        if(backgroundsFragment == null) {
+            backgroundsFragment = new BackgroundsFragment();
+        }
+
         myPagerAdapter.addFragment(Keys.FRAGMENT_HOME, homeFragment);
         myPagerAdapter.addFragment(Keys.FRAGMENT_TEMPLATES, templatesFragment);
         myPagerAdapter.addFragment(Keys.FRAGMENT_CATEGORIES, categoriesFragment);
         myPagerAdapter.addFragment(Keys.FRAGMENT_COLLAGE, makeCollageFragment);
+        myPagerAdapter.addFragment(Keys.FRAGMENT_BACKGROUND, backgroundsFragment);
         myPagerAdapter.addFragment(Keys.FRAGMENT_REPORT_PROBLEM, reportAProblemFragment);
 
         homeFragment.setFragmentRefreshser(new FragmentRefreshser() {
@@ -173,10 +184,11 @@ public class HomeActivity extends SuperCompatActivity
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+            return;
         } else {
             if (backPressed == 0) {
                 backPressed = System.currentTimeMillis();
-                showToast(this, "Press BACK again to exit!");
+                showToast(this, getString(R.string.info_exit));
             } else if (backPressed <= 3000) {
                 backPressed = 0;
                 super.onBackPressed();
@@ -218,8 +230,11 @@ public class HomeActivity extends SuperCompatActivity
             case R.id.make_collage:
                 setCurrentView(3);
                 break;
-            case R.id.report_problem:
+            case R.id.make_background:
                 setCurrentView(4);
+                break;
+            case R.id.report_problem:
+                setCurrentView(5);
                 break;
             case R.id.nav_share:
                 break;
@@ -263,7 +278,6 @@ public class HomeActivity extends SuperCompatActivity
                 refreshFragments();
             }
         }, 1000);
-
     }
 
     private void refreshFragments() {

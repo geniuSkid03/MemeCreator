@@ -28,7 +28,7 @@ public class HomeFragment extends SuperFragment {
 
     private TrendingMemesFragment trendingMemesFragment;
     private EditedMemesFragment editedMemesFragment;
-    private SavedMemesFragment savedMemesFragment;
+//    private SavedMemesFragment savedMemesFragment;
 
     private FragmentRefreshser fragmentRefreshser;
 
@@ -53,20 +53,20 @@ public class HomeFragment extends SuperFragment {
             editedMemesFragment = new EditedMemesFragment();
         }
 
-        if(savedMemesFragment == null) {
-            savedMemesFragment = new SavedMemesFragment();
-        }
+//        if(savedMemesFragment == null) {
+//            savedMemesFragment = new SavedMemesFragment();
+//        }
 
         if(fragmentNames.isEmpty()) {
             fragmentNames.add(getString(R.string.trending));
             fragmentNames.add(getString(R.string.edited));
-            fragmentNames.add(getString(R.string.saved));
+//            fragmentNames.add(getString(R.string.saved));
         }
 
         if(fragmentslist.isEmpty()) {
             fragmentslist.add(trendingMemesFragment);
             fragmentslist.add(editedMemesFragment);
-            fragmentslist.add(savedMemesFragment);
+//            fragmentslist.add(savedMemesFragment);
         }
 
         fragmentPagerAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
@@ -113,10 +113,10 @@ public class HomeFragment extends SuperFragment {
                     TabLayout.Tab tabTwo = tabLayout.getTabAt(i);
                     Objects.requireNonNull(tabTwo).setIcon(R.drawable.tab_three_icon);
                     break;
-                case 2:
-                    TabLayout.Tab tabThree = tabLayout.getTabAt(i);
-                    Objects.requireNonNull(tabThree).setIcon(R.drawable.tab_two_icon);
-                    break;
+//                case 2:
+//                    TabLayout.Tab tabThree = tabLayout.getTabAt(i);
+//                    Objects.requireNonNull(tabThree).setIcon(R.drawable.tab_two_icon);
+//                    break;
             }
         }
     }
@@ -134,11 +134,11 @@ public class HomeFragment extends SuperFragment {
             }
         }
 
-        if (savedMemesFragment != null) {
-            if (savedMemesFragment.isVisible()) {
-                savedMemesFragment.refreshSavedMemes();
-            }
-        }
+//        if (savedMemesFragment != null) {
+//            if (savedMemesFragment.isVisible()) {
+//                savedMemesFragment.refreshSavedMemes();
+//            }
+//        }
     }
 
     public void setFragmentRefreshser(FragmentRefreshser fragmentRefreshser) {

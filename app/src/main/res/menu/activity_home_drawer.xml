@@ -29,6 +29,11 @@
             android:icon="@drawable/ic_collage_icon"
             android:title="@string/make_collage" />
 
+        <item
+            android:id="@+id/make_background"
+            android:icon="@drawable/ic_bg_icon"
+            android:title="@string/backgrounds" />
+
     </group>
 
     <group
@@ -39,14 +44,16 @@
             android:id="@+id/report_problem"
             android:icon="@drawable/ic_report_problem_icon"
             android:title="@string/report_problem" />
+
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_menu_share"
             android:title="@string/share" />
+
         <item
             android:id="@+id/nav_send"
-            android:icon="@drawable/ic_menu_send"
-            android:title="@string/send" />
+            android:icon="@drawable/ic_rate_icon"
+            android:title="@string/rate_this_app" />
 
     </group>
 

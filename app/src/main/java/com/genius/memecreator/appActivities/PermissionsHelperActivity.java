@@ -1,6 +1,7 @@
 package com.genius.memecreator.appActivities;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import com.genius.memecreator.R;
 import com.genius.memecreator.appUtils.AppHelper;
 import com.genius.memecreator.appUtils.Keys;
+
+import java.io.File;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -41,11 +44,6 @@ public class PermissionsHelperActivity extends SuperCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        for (String appNeededPermission : appNeededPermissions) {
-            permsnTv.setText(String.format("%s\n", appNeededPermission));
-        }
-
     }
 
     @Override
@@ -77,7 +75,35 @@ public class PermissionsHelperActivity extends SuperCompatActivity {
     }
 
     private void goNext() {
+        createFolders();
         dataStorage.saveData(Keys.ALL_PERMS_GRANTED, true);
         goTo(this, HomeActivity.class, true);
+    }
+
+    private void createFolders() {
+        if (!Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED)) {
+            AppHelper.toast(this, "Error! No SDCARD Found!");
+        } else {
+            File file = new File(Environment.getExternalStorageDirectory()
+                    + File.separator
+                    + getString(R.string.app_name)
+                    + File.separator
+                    + getString(R.string.edited));
+            if(!file.exists()) {
+                file.mkdirs();
+                AppHelper.print("Edited folder created");
+            }
+
+            File file1 = new File(Environment.getExternalStorageDirectory()
+                    + File.separator
+                    + getString(R.string.app_name)
+                    + File.separator
+                    + getString(R.string.saved));
+            if(!file1.exists()) {
+                file1.mkdirs();
+                AppHelper.print("Saved folder created!");
+            }
+        }
     }
 }

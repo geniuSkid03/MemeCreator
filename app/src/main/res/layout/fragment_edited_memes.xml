@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/no_saved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:text="@string/click_to_edit_your_meme"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:footerDividersEnabled="false"
+            android:numColumns="2"
+            android:padding="1dp"
+            android:visibility="gone" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="32dp"
+            android:src="@drawable/ic_menu_camera"
+            android:tint="@color/black"
+            app:backgroundTint="@color/white"
+            app:fabSize="mini"
+            app:rippleColor="@color/colorPrimaryDark" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/fab_camera"
+            android:layout_alignEnd="@+id/fab_camera"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/ic_menu_gallery"
+            android:tint="@color/black"
+            app:backgroundTint="@color/white"
+            app:fabSize="mini"
+            app:rippleColor="@color/colorPrimaryDark" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/edit_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="24dp"
+            android:src="@drawable/ic_add"
+            android:tint="@color/white"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:fabSize="normal"
+            app:rippleColor="@color/black" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

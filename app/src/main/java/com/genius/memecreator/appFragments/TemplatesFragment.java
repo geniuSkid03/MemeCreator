@@ -33,8 +33,8 @@ public class TemplatesFragment extends SuperFragment {
 
         templatePoolArrayList = new ArrayList<>();
 
-        templatePoolArrayList.add(new TemplatePool("Vadivelu", String.valueOf(AppHelper.getUriFromDrawable(getContext(), R.drawable.vaidvelu)), 150));
-        templatePoolArrayList.add(new TemplatePool("Santhanam", String.valueOf(AppHelper.getUriFromDrawable(getContext(), R.drawable.santhanam)), 65));
+        templatePoolArrayList.add(new TemplatePool("Vadivelu", String.valueOf(AppHelper.getUriFromDrawable(getContext(), R.drawable.ambilwarna_arrow_down)), 150));
+        templatePoolArrayList.add(new TemplatePool("Santhanam", String.valueOf(AppHelper.getUriFromDrawable(getContext(), R.drawable.ambilwarna_alphacheckered)), 65));
 
         templatePoolArrayAdapter = new ArrayAdapter<TemplatePool>(getContext(), R.layout.template_pool_item, templatePoolArrayList) {
             @NonNull
